@@ -28,7 +28,7 @@ const Navbar = () => {
             <h6>food</h6>
           </Link>
           <span>John</span>
-          <span>Log Out</span>
+          <span>Logout</span>
           <span className='write'>
             <Link className='link' to='/write'>Write</Link>
           </span>
