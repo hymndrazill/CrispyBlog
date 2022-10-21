@@ -12,7 +12,6 @@ const Single = () => {
   const location = useLocation();
   const postId = location.pathname.split("/")[2];
   const navigate = useNavigate()
-
   const {currentUser} = useContext(AuthContext)
  
   useEffect(()=>{
@@ -39,14 +38,16 @@ console.log(currentUser.username);
       // console.log(err);
       // console.log("err here");
     }
-
   }
-  
+  const getText = html =>{
+    const doc = new DOMParser().parseFromString(html,'text/html');
+    return doc.body.textContent
+  }
 
   return (
     <div className='single'>
       <div className="content">
-      <img src={post.img} alt="" />
+      <img src={`../upload/${post.img}`} alt="" />
       <div className="user">
        { post?.userImg && <img src={post?.userImg} alt="img" />}
       <div className="info">
@@ -55,18 +56,18 @@ console.log(currentUser.username);
       </div>
       { currentUser.username === post.username  && (
         <div className="edit">
-        <Link to={`/write?edit=2`}>
+        <Link to={`/write?edit=2`} state={post}>
           <img src={Edit} alt="" />
         </Link>
           <img onClick={handleDelete} src={Delete} alt="" />
         </div>
        )} 
       </div>
-      <h1>{post.title}</h1>
-          {post.desc}
+      <h1>{getText(post.title)}</h1>
+          {getText(post.desc)}
       </div>
         <div className="menu">
-        <Menu/>
+        <Menu cat={post.cat}/>
         </div>
     </div>
   )
