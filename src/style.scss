@@ -218,9 +218,7 @@ $lightGreen : #b9e7e7;
                 flex-direction: column;
                 flex:2;
                 gap:20px;
-                    h1{
-                        
-                    }
+                    
                     .post {
                         display: flex;
                         flex-direction: column;
@@ -318,6 +316,7 @@ $lightGreen : #b9e7e7;
                 flex:2;
                 gap:20px;
 
+
                 .item {
                     border-top:1px solid lightgray;
                     padding: 10px;
@@ -328,7 +327,7 @@ $lightGreen : #b9e7e7;
                     font-weight: 12;
                     color:#555;
                     gap:10px;
-
+                }
                     h1{
                         font-size: 20px;
                     }
@@ -361,18 +360,74 @@ $lightGreen : #b9e7e7;
                         gap:2px;
                         color:teal;
                     }
+                
+                   
 
-                }
-
+            }
+           
 
 
             }
+          
 
 
+            .profile {
+                
+                .user_profile {
+                    display: flex;
+                    gap: 35px;
+                    flex-direction: column;
+                    align-items: center;
+                    position: relative;
+                }
+                .user_img {
+                   
+                    margin-bottom: 40px; 
+                    margin-top: 10px;
+                    position: absolute;
+                    left:10%;
+                    top: 10;
 
+                }
+                .userInfoImg {
+                    height: 100px;
+                    width: 100px;
+                    border-radius: 50%;
+                }
+                .user_info {
+                    display: flex;
+                    margin-top: 5px;
+                    align-items: center;
+                    justify-content: center;
+                    flex-direction: column;
+                    padding: 10px 5px;
+                    justify-content: space-between;
 
+                }
+                input {
+                padding: 10px;
+                border: none;
+                border-bottom: 1px solid gray;
+                }
+                button {
+                    width: max-content;
+                    padding: 10px 30px;
+                    border: none;
+                    cursor: pointer;
+                    border: 1px solid teal;
+                    color: teal;
+    
+                    &:hover {
+                        border: 1px solid wheat;
+                        color: white;
+                        background-color: wheat;
+                        text-shadow: 1px;
+                        font-weight: 600;
+                            }
+                }
+            }
 
-        }
+        
 
 
     }
