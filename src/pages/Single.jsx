@@ -27,9 +27,9 @@ const Single = () => {
     fetchData();
   }, [postId])
 // console.log(post);
-console.log(currentUser.username);
-  console.log(post.username);
-  console.log(currentUser.username === post.username);
+// console.log(currentUser.username);
+//   console.log(post.username);
+//   console.log(currentUser.username === post.username);
   const handleDelete = async () =>{
     try {
       await axios.delete(`/posts/${postId}`); 
