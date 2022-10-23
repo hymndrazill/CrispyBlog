@@ -13,6 +13,7 @@ import Write from "./pages/Write";
 import Register from "./pages/Register";
 import Login from "./pages/Login";
 import './style.scss'
+import Profile from "./pages/Profile";
 
 
 const Layout = () => {
@@ -43,7 +44,7 @@ const router = createBrowserRouter([
         path:'/write',
         element: <Write/>
       },
-     
+    
     ]
   },
   {
@@ -54,6 +55,11 @@ const router = createBrowserRouter([
     path:'/register',
     element: <Register/>
   },
+  {
+    path:'/profile',
+    element: <Profile/>
+  },
+ 
  
 ]); 
 
