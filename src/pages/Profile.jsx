@@ -11,24 +11,26 @@ const Profile = () => {
     username:'',
     email:'',
     password:'',
-    img:''
+    img:'',
+    id: userId
   })
   const navigate = useNavigate();
   const handleChange = (e) =>{
     setUserInfo(prev=> ({...prev, [e.target.name]: e.target.value}))
   }
-  const updateUser =  async (e)=>{
+  const updateUser =  async(e)=>{
     e.preventDefault();
     try {
-      const res = await axios.put(`/users/${userId}`, userInfo);
-      console.log(res?.data);
+     await axios.put(`/users/${userId}`, userInfo);
+      console.log("success");
       navigate("/")
   
     } catch(err) {
-      console.log('error');
+      console.log('something is caught');
       console.log(err);
     }
   }
+
 
 
   return (
@@ -39,17 +41,17 @@ const Profile = () => {
         <img className="userInfoImg" src={currentUser.img} alt="" />
       </div>
       <div className="user_info">
-      <input onChange={handleChange} name="username" text="text" placeholder='Username '/>
+      <input  required onChange={handleChange} name="username" text="text" placeholder='Username '/>
       </div>
 
         <div className="user_info">
-        <input onChange={handleChange} name="email" text="email" placeholder='Email '/>
+        <input required onChange={handleChange} name="email" text="email" placeholder='Email '/>
         </div>
         <div className="user_info">
-        <input onChange={handleChange} name="password" text="password" placeholder='password '/>
+        <input required onChange={handleChange} name="password" type="password" placeholder='password '/>
         </div>
         <div className="user_info">
-          <input onChange={handleChange} name="img" type="file"/>
+        <input  required onChange={handleChange} name="img" type="file"/>
         </div>
         <button onClick={updateUser}className='profile_btn'>Edit User.</button>
         </div>
