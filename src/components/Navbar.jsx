@@ -34,7 +34,7 @@ const Navbar = () => {
           </Link>
           <span>
             <Link to="/profile">
-            {currentUser.username}
+            {currentUser?.username}
 
             </Link>
             </span>
