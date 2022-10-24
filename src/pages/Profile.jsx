@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom'
 import { AuthContext } from '../context/authContext'
 
 const Profile = () => {
-  const {currentUser} = useContext(AuthContext)
+  const {currentUser,logout} = useContext(AuthContext)
   let userId= currentUser.id
   const [userInfo,setUserInfo] = useState({
     username:'',
@@ -14,6 +14,7 @@ const Profile = () => {
     img:'',
     id: userId
   })
+
   const navigate = useNavigate();
   const handleChange = (e) =>{
     setUserInfo(prev=> ({...prev, [e.target.name]: e.target.value}))
@@ -23,6 +24,7 @@ const Profile = () => {
     try {
      await axios.put(`/users/${userId}`, userInfo);
       console.log("success");
+      logout();
       navigate("/")
   
     } catch(err) {
